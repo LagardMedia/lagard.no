@@ -81,3 +81,12 @@ h1 {
     --main-text-color: #dde4e7;
     --secondary-background: #262933;
 }
+
+
+.ytfull {
+  border: 2px solid black;
+}
+
+.ytp-gradient-top, .ytp-chrome-top, .ytp-chrome-bottom, .ytp-show-cards-title, .ytp-chrome-top-buttons {
+  display: none
+}
