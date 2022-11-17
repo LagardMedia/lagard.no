@@ -17,7 +17,7 @@ on:
         - 'Nordfold'
         - 'Nordfold - Reprise'
 jobs:
-  jsonedit:
+- jsonedit:
     runs-on: ubuntu-latest
     name: json-to-file
     steps:
@@ -26,5 +26,22 @@ jobs:
         # The json you want to store
         json: '{"streamurl": "${{ inputs.fbUrl }}", "tekst": "${{ inputs.text }}"}'
         # The filename you want to store the json in
-        filename: '.\nordfoldtest.json'
-    - run: pwd
+        filename: './nordfoldtest.json'
+- push:
+  - name: GitHub Push
+    runs-on: ubuntu-latest
+    steps:
+    - uses: ad-m/github-push-action@v0.6.0
+      with:
+        # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
+        github_token: '$\{{ secrets.TOKEN }}'
+        # Repository name to push. Default or empty value represents current github repository (${GITHUB_REPOSITORY})
+        repository: # optional, default is 
+        # Destination branch to push changes
+        branch: 'main' # optional, default is master
+        # Determines if force push is used
+        force: # optional
+        # Determines if --tags is used
+        tags: # optional
+        # Directory to change to before pushing.
+        directory: # optional, default is .
