@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     name: json-to-file
     steps:
-    - uses: devops-actions/json-to-file@v1.0.0.github/workflows/
+    - uses: devops-actions/json-to-file@v1.0.0
       with:
         # The json you want to store
         json: '{"streamurl": "${{ inputs.fbUrl }}", "tekst": "${{ inputs.text }}"}'
