@@ -40,4 +40,4 @@ jobs:
         # Determines if --tags is used
         tags: false
         # Directory to change to before pushing.
-        directory: '.'
+        directory: './'
