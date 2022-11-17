@@ -1,7 +1,7 @@
 name: Test
 on:
   workflow_dispatch:
-  
+
   
 jobs:
   testjob:
@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: What
         run: |
-            echo "test"
+            echo {inputmessage}
