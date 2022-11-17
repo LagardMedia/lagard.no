@@ -27,6 +27,11 @@ jobs:
         json: '{"streamurl": "${{ inputs.fbUrl }}", "tekst": "${{ inputs.text }}"}'
         # The filename you want to store the json in
         filename: './nordfoldtest.json'
+    - name: Commit files
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -a -m "Change"
     - uses: ad-m/github-push-action@v0.6.0
       with:
         # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
