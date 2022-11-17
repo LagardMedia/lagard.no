@@ -1,12 +1,29 @@
-name: Test
+name: JSON Edit
+
+
 on:
   workflow_dispatch:
-
-  
+    inputs:
+      fbUrl:
+        description: 'Stream/Video URL (Example: "https://www.facebook.com/steigennytt/videos/593749372505938/")'
+        required: true
+        type: string
+      text:
+        description: 'true = URL is a live stream, false = URL is a video'
+        required: true
+        default: 'Nordfold'
+        type: choice
+        options:
+        - 'Nordfold'
+        - 'Nordfold - Reprise'
 jobs:
-  testjob:
-    runs-on: ubuntu-latest
-    steps:
-      - name: What
-        run: |
-            echo {inputmessage}
+  jsonedit:
+    name: json-to-file
+    # You may pin to the exact commit or the version.
+    # uses: devops-actions/json-to-file@5984382751b07b0575aff49fe6717a021780ad07
+    uses: devops-actions/json-to-file@v1.0.0
+    with:
+      # The json you want to store
+      json: '{"streamurl": "${{ inputs.fbUrl }}", "tekst": "${{ inputs.text }}"}'
+      # The filename you want to store the json in
+      filename: './nordfoldcam.json'
