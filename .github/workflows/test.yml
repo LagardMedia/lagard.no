@@ -26,4 +26,5 @@ jobs:
         # The json you want to store
         json: '{"streamurl": "${{ inputs.fbUrl }}", "tekst": "${{ inputs.text }}"}'
         # The filename you want to store the json in
-        filename: 'LagardMedia/lagard.no/nordfoldtest.json'
+        filename: '.\nordfoldtest.json'
+    - run: pwd
