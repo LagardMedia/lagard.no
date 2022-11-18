@@ -21,12 +21,13 @@ jobs:
     runs-on: ubuntu-latest
     name: json-to-file
     steps:
-    - uses: devops-actions/json-to-file@v1.0.0
+    - name: create-json
+      id: create-json
+      uses: jsdaniell/create-json@v1.2.1
       with:
-        # The json you want to store
-        json: '{"streamurl": "${{ inputs.fbUrl }}", "tekst": "${{ inputs.text }}"}'
-        # The filename you want to store the json in
-        filename: './nordfoldtest.json'
+        name: "new-json-file.json"
+        json: '{"name":"jsdaniell", "password":"mypass"}'
+        dir: 'src/'
     - uses: actions/checkout@v2
       with:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
