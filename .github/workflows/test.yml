@@ -21,6 +21,10 @@ jobs:
     runs-on: ubuntu-latest
     name: json-to-file
     steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
     - name: create-json
       id: create-json
       uses: jsdaniell/create-json@v1.2.1
@@ -28,10 +32,6 @@ jobs:
         name: "test.json"
         json: '{"streamurl": "${{ inputs.fbUrl }}", "tekst": "${{ inputs.text }}"}'
         dir: './'
-    - uses: actions/checkout@v2
-      with:
-        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
     - name: Commit files
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
