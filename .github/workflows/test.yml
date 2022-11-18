@@ -27,7 +27,7 @@ jobs:
       with:
         name: "test.json"
         json: '{"streamurl": "${{ inputs.fbUrl }}", "tekst": "${{ inputs.text }}"}'
-        dir: '../'
+        dir: './'
     - uses: actions/checkout@v2
       with:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
