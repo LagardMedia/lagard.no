@@ -25,9 +25,9 @@ jobs:
       id: create-json
       uses: jsdaniell/create-json@v1.2.1
       with:
-        name: "new-json-file.json"
-        json: '{"name":"jsdaniell", "password":"mypass"}'
-        dir: 'src/'
+        name: "test.json"
+        json: '{"streamurl": "${{ inputs.fbUrl }}", "tekst": "${{ inputs.text }}"}'
+        dir: '../'
     - uses: actions/checkout@v2
       with:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
