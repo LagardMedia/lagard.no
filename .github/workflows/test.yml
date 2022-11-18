@@ -27,11 +27,11 @@ jobs:
       with:
         name: "test.json"
         json: '{"streamurl": "${{ inputs.fbUrl }}", "tekst": "${{ inputs.text }}"}'
-        dir: './temp/'
+        dir: './'
     - uses: actions/upload-artifact@v3
       with:
         name: test-json
-        path: './temp/test.json'
+        path: './test.json'
     - uses: actions/checkout@v2
       with:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
