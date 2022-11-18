@@ -36,7 +36,7 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add './test.json'
+        git add 'test.json'
         git commit -a -m "Change"
     - uses: ad-m/github-push-action@v0.6.0
       with:
