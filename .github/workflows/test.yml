@@ -43,7 +43,7 @@ jobs:
         # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
         github_token: '$\{{ secrets.TOKEN }}'
         # Repository name to push. Default or empty value represents current github repository (${GITHUB_REPOSITORY})
-        repository: 'https://github.com/LagardMedia/lagard.no.git'
+        repository: 'https://github.com/LagardMedia/lagard.no'
         # Destination branch to push changes
         branch: 'main' # optional, default is master
         # Determines if force push is used
