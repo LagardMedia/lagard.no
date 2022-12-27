@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Telling</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body>
+    <div style="display: flex;    flex-direction: column; align-content: center; align-items: center;">
+      <h2>Hvor mange...</h2>
+      <form>
+        <label for="amount1"><strong>1</strong> kroninger er det:</label><br>
+        <input type="text" id="amount1" name="amount"><br>
+        <label for="amount5"><strong>5</strong> kroninger er det:</label><br>
+        <input type="text" id="amount5" name="amount"><br>
+        <label for="amount10"><strong>10</strong> kroninger er det:</label><br>
+        <input type="text" id="amount10" name="amount"><br>
+        <label for="amount20"><strong>20</strong> kroninger er det:</label><br>
+        <input type="text" id="amount20" name="amount"><br>
+        <label for="amount50"><strong>50</strong> lapper er det:</label><br>
+        <input type="text" id="amount50" name="amount"><br>
+        <label for="amount100"><strong>100</strong> lapper er det:</label><br>
+        <input type="text" id="amount100" name="amount"><br>
+        <label for="amount200"><strong>200</strong> lapper er det:</label><br>
+        <input type="text" id="amount200" name="amount"><br>
+        <label for="amount500"><strong>500</strong> lapper er det:</label><br>
+        <input type="text" id="amount500" name="amount"><br>
+        <label for="amount1000"><strong>1000</strong> lapper er det:</label><br>
+        <input type="text" id="amount1000" name="amount"><br>
+        <br>
+        <button style="width: 178px; height: 35px; border-radius: 25px;" type="button" onclick="calculateTotal()">Regn ut</button>
+      </form>
+      <br>
+      <p style="font-size: large;" id="result"></p>
+      <p style="font-size: medium; margin-top: -10px" id="finalResult"></p>
+    </div>
+  
+    <script>
+      function calculateTotal() {
+        // Initialize the total to 0
+        var total = 0;
+        
+        // Get the values of each input field and multiply them by the appropriate factor
+        total += document.getElementById("amount1").value * 1;
+        total += document.getElementById("amount5").value * 5;
+        total += document.getElementById("amount10").value * 10;
+        total += document.getElementById("amount20").value * 20;
+        total += document.getElementById("amount50").value * 50;
+        total += document.getElementById("amount100").value * 100;
+        total += document.getElementById("amount200").value * 200;
+        total += document.getElementById("amount500").value * 500;
+        total += document.getElementById("amount1000").value * 1000;
+        
+        // Display the result
+        document.getElementById("result").innerHTML = "Det er <strong>" + total + "</strong> kroner i kassa.";
+        document.getElementById("finalResult").innerHTML = "Det skal <strong>" + (total-4000) + "</strong> til banken.";
+      }
+    </script>
+  </body>
+</html>

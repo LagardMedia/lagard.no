@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Testing</title>
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <style>
+          .gridobject {
+            display: block;
+            width: 200px;
+            height: 100px;
+            background-color: rgb(63, 71, 104);
+            margin: 1px;
+          }
+          .gridtitle {
+            text-align: left;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 8px;
+            color: white;
+            
+          }
+          .gridobject a {
+            text-decoration: none;
+          }
+          #playlistwrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: flex-start;
+            align-items: flex-start;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
+          }
+        </style>
+    </head>
+    <body>
+      <header>
+          <h1>Elias Nikolai Lagård Simonsen</h1>
+      </header>
+      <nav>
+          <ul>
+              <li><a href="/"><strong>Hjem</strong></a></li>
+            </ul>
+      </nav>
+      <div class="wrapper" id="playlistwrapper">
+          
+      </div>
+      <script>
+        const playlist = [
+          {"title": "Utsikt fra Norway Live", "url": "https://www.youtube.com/embed/A86RXuRNjk4?autoplay=1", "length": 120},
+          {"title": "Skarsvåg, Nordkapp", "url": "https://www.youtube.com/embed/c4kpeZHcke8?autoplay=1", "length": 60},
+          {"title": "Hafjell", "url": "https://www.youtube.com/embed/aAtphqLk2-4?autoplay=1", "length": 60}
+        ];
+        playlist.forEach(addPlaylistElement);
+
+        function addPlaylistElement(value, index, array) {
+          const el_a = document.createElement("a");
+          el_a.href = value["url"];
+          const el = document.createElement("div");
+          el.setAttribute("id", index);
+          el.setAttribute("class", "gridobject");
+          el.style.width = (value["length"]*3) + "px"
+          const el_p = document.createElement("p");
+          el_p.setAttribute("class", "gridtitle");
+          el_p.innerHTML = value["title"];
+          el_a.appendChild(el_p)
+          el.appendChild(el_a)
+          document.getElementById("playlistwrapper").appendChild(el);
+        };
+      </script>
+  </body>
+</html>

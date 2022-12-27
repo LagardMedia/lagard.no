@@ -67,6 +67,19 @@ li a:hover {
 }
 
 
+
+input {
+  background-color: #ced1dd;
+  border-style: solid;
+  border-color: var(--secondary-background);
+  height: 22px;
+}
+
+button {
+  background-color: #314a96;
+  color:#dde4e7;
+}
+
 /* Text styles */
 
 h1 {
@@ -88,5 +101,5 @@ h1 {
 }
 
 .ytp-gradient-top, .ytp-chrome-top, .ytp-chrome-bottom, .ytp-show-cards-title, .ytp-chrome-top-buttons {
-  display: none
+  display: none;
 }
