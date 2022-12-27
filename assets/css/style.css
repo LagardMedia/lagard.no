@@ -69,14 +69,20 @@ li a:hover {
 
 
 input {
-  background-color: #ced1dd;
+  background-color: #f5f7ff;
   border-style: solid;
   border-color: var(--secondary-background);
   height: 22px;
 }
 
 button {
-  background-color: #314a96;
+  background-color: #3c55a0;
+  color:#dde4e7;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #253a7a;
   color:#dde4e7;
 }
 
